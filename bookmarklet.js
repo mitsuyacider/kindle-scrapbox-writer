@@ -22,10 +22,11 @@
 Scrapbox="https://scrapbox.io/mitsuya/";
 url="https://read.amazon.co.jp/kp/notebook";
 if(location.href.indexOf(url)==0){
-  p=document.getElementById("annotation-scroller").querySelectorAll("h3.kp-notebook-metadata,h5.kp-notebook-metadata,#highlight,#note");
+  title=document.getElementById("annotation-scroller").querySelectorAll("h3.kp-notebook-metadata,h5.kp-notebook-metadata,#highlight,#note");
+  author=document.getElementById("annotation-scroller").querySelectorAll(".a-spacing-none,h5.kp-notebook-metadata,#highlight,#note");
   s="";
   sss = "";
-  for(i=0;i<p.length;i++) sss += p[i].innerText+"\n\n";
+  for(i=0;i<title.length;i++) sss += title[i].innerText+"\n\n";
 
   var highlights = document.getElementsByClassName("kp-notebook-highlight");
   var highlights_array = [];
@@ -40,9 +41,13 @@ if(location.href.indexOf(url)==0){
   for (var i = 0; i < quotation.length; i++) {
     quotation_array.push(quotation[i].innerText);
   }
-
+  
   b="["+document.querySelector(".kp-notebook-printable img").src+" "+document.querySelector(".kp-notebook-printable").href+"]";  
   s += b;
+  s += "\n";
+  s += author[0].innerText;
+  
+  s += "\n\n";
   var results = Array.prototype.slice.call(highlights_array);
   var results2 = Array.prototype.slice.call(quotation_array);
   for(j=0; j < results.length; j++) {
@@ -54,6 +59,6 @@ if(location.href.indexOf(url)==0){
 
   s += "#readings";
   t =sss.split("\n")[0];
-  url=Scrapbox+encodeURIComponent(t)+"?body="+encodeURIComponent(s);
+  url=Scrapbox+encodeURIComponent(t)+"?body=" + encodeURIComponent(s);
 }
 location=url;
