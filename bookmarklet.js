@@ -1,5 +1,5 @@
  javascript:
-Scrapbox="https://scrapbox.io/mitsuya/";
+Scrapbox="https://scrapbox.io/your-project-name/";
 url="https://read.amazon.co.jp/kp/notebook";
 if(location.href.indexOf(url) == 0) {
   var titleElement=document.getElementById("annotation-scroller").querySelectorAll("h3.kp-notebook-metadata");
