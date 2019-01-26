@@ -4,6 +4,6 @@
 ```
 Scrapbox="https://scrapbox.io/your-project-name/";
 ```
-2. Add whole code as a bookmarklet in kindle notebook [here](https://read.amazon.co.jp/notebook).
+2. Add whole code in URL field as a bookmarklet in kindle notebook [here](https://read.amazon.co.jp/notebook).
 
 3. Click bookmark
